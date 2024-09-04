@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://sf84s4rl143h"]
+
+[ext_resource type="Script" path="res://your_name.gd" id="1_ihxpl"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="2_q22g6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ujne"]
+font_size = 48
+
+[node name="YourName" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihxpl")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 67.0
+offset_right = 884.0
+offset_bottom = 378.0
+text = "-"
+label_settings = SubResource("LabelSettings_5ujne")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ShowButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 457.0
+offset_right = 313.0
+offset_bottom = 538.0
+theme = ExtResource("2_q22g6")
+text = "Show"
+
+[node name="ClearButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 451.0
+offset_right = 675.0
+offset_bottom = 532.0
+theme = ExtResource("2_q22g6")
+text = "Clear"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 451.0
+offset_right = 1040.0
+offset_bottom = 532.0
+theme = ExtResource("2_q22g6")
+text = "Exit"
+
+[connection signal="pressed" from="ShowButton" to="." method="_on_show_button_pressed"]
+[connection signal="pressed" from="ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

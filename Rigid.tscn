@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4xyg1jb4tdji"]
+
+[ext_resource type="Script" path="res://rigid.gd" id="1_ogbes"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yov0f"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_si8gq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gc3qx"]
+radius = 28.8617
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loopb"]
+size = Vector2(750, 133)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ogbes")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+material = SubResource("CanvasItemMaterial_yov0f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+material = SubResource("CanvasItemMaterial_si8gq")
+position = Vector2(610, 260)
+shape = SubResource("CircleShape2D_gc3qx")
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(610, 289, 603, 288, 596, 285, 590, 280, 585, 275, 582, 268, 581, 260, 582, 251, 585, 245, 589, 239, 595, 235, 602, 232, 610, 231, 618, 232, 624, 235, 630, 240, 635, 246, 638, 253, 639, 260, 638, 268, 635, 275, 631, 280, 625, 284, 617, 287)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(619, 582)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("RectangleShape2D_loopb")
+
+[node name="Polygon2D" type="Polygon2D" parent="RigidBody2D2/CollisionShape2D"]
+position = Vector2(-9, -322)
+polygon = PackedVector2Array(-370, 388, -370, 257, 384, 257, 384, 392)

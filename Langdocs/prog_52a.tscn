@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1ah01j2x2rrc"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_52a.gd" id="1_xvswo"]
+[ext_resource type="LabelSettings" uid="uid://mogtp5n1f7ns" path="res://Langdocs/Big_Label_38.tres" id="2_b33t8"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="3_8frt3"]
+
+[node name="Prog52a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xvswo")
+
+[node name="Length" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 49.0
+offset_right = 512.0
+offset_bottom = 102.0
+text = "Length:"
+label_settings = ExtResource("2_b33t8")
+
+[node name="Width" type="Label" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 128.0
+offset_right = 528.0
+offset_bottom = 181.0
+text = "Width:"
+label_settings = ExtResource("2_b33t8")
+
+[node name="lblArea" type="Label" parent="."]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 207.0
+offset_right = 1036.0
+offset_bottom = 356.0
+text = "Area: "
+label_settings = ExtResource("2_b33t8")
+horizontal_alignment = 1
+
+[node name="lblPeri" type="Label" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 373.0
+offset_right = 1035.0
+offset_bottom = 522.0
+text = "Perimeter: "
+label_settings = ExtResource("2_b33t8")
+horizontal_alignment = 1
+
+[node name="txtLen" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 37.0
+offset_right = 1056.0
+offset_bottom = 119.0
+theme = ExtResource("3_8frt3")
+
+[node name="txtWid" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 120.0
+offset_right = 1056.0
+offset_bottom = 202.0
+theme = ExtResource("3_8frt3")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 525.0
+offset_right = 273.0
+offset_bottom = 625.0
+theme = ExtResource("3_8frt3")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 523.0
+offset_right = 661.0
+offset_bottom = 623.0
+theme = ExtResource("3_8frt3")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 523.0
+offset_right = 1038.0
+offset_bottom = 623.0
+theme = ExtResource("3_8frt3")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

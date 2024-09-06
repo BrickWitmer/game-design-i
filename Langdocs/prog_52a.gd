@@ -15,7 +15,7 @@ func _on_btn_calc_pressed() -> void:
 
 
 func _on_btn_clear_pressed() -> void:
-	$lblArea.text = "Area: "
+	$lblArea.text = "Area:  "
 	$lblPeri.text = "Perimeter: "
 	$txtLen.text = ""
 	$txtWid.text = ""

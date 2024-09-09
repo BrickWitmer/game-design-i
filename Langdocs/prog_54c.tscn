@@ -49,6 +49,7 @@ text = "Circumference: "
 label_settings = ExtResource("2_des7a")
 
 [node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 525.0
 offset_right = 273.0
@@ -57,6 +58,7 @@ theme = ExtResource("1_ox5ck")
 text = "Calculate"
 
 [node name="btnClear" type="Button" parent="."]
+layout_mode = 0
 offset_left = 415.0
 offset_top = 523.0
 offset_right = 661.0
@@ -65,6 +67,7 @@ theme = ExtResource("1_ox5ck")
 text = "Clear"
 
 [node name="btnExit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 523.0
 offset_right = 1038.0

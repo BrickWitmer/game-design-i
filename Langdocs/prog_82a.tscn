@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5nrwspeai72q"]
+
+[ext_resource type="Script" path="res://Langdocs/prog_82a.gd" id="1_iwh4i"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="2_3uhhr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_asge3"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_sysqf"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yvak"]
+font_size = 48
+
+[node name="Prog82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwh4i")
+
+[node name="linSpeedLimit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 40.0
+offset_right = 426.0
+offset_bottom = 71.0
+
+[node name="linMPH" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 82.0
+offset_right = 479.0
+offset_bottom = 113.0
+
+[node name="lblSpeedLimit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 24.0
+offset_right = 114.0
+offset_bottom = 47.0
+text = "Speed limit: "
+label_settings = SubResource("LabelSettings_asge3")
+
+[node name="lblMPH" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 66.0
+offset_right = 114.0
+offset_bottom = 89.0
+text = "Vehicle Speed: "
+label_settings = SubResource("LabelSettings_sysqf")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 421.0
+offset_right = 529.0
+offset_bottom = 494.0
+text = "Fine:"
+label_settings = SubResource("LabelSettings_8yvak")
+
+[node name="lblFineCash" type="Label" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 426.0
+offset_right = 730.0
+offset_bottom = 499.0
+label_settings = SubResource("LabelSettings_8yvak")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 562.0
+offset_right = 215.0
+offset_bottom = 640.0
+theme = ExtResource("2_3uhhr")
+text = "calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 559.0
+offset_right = 701.0
+offset_bottom = 637.0
+theme = ExtResource("2_3uhhr")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 556.0
+offset_right = 1114.0
+offset_bottom = 634.0
+theme = ExtResource("2_3uhhr")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

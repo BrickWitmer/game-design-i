@@ -25,6 +25,7 @@ func _on_btn_calc_pressed() -> void:
 	$Output.text = "Sum: " + str(Sum) + \
 	"\nDifference: " + str(Diff) + \
 	"\nProduct: " + str(Prod) + \
+	"\nAverage: " + str(Aver) + \
 	"\nAbs. Distance: " + str(Abs) + \
 	"\nMax: " + str(Max) + \
 	"\nMin: " + str(Min)
@@ -34,6 +35,7 @@ func _on_btn_clear_pressed() -> void:
 	$Output.text = "Sum: " + \
 	"\nDifference: " +  \
 	"\nProduct: " +  \
+	"\nAverage: "  + \
 	"\nAbs. Distance: " +  \
 	"\nMax: " +  \
 	"\nMin: "

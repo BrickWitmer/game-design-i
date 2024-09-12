@@ -4,7 +4,7 @@
 [ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="2_t6x5l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qvgpb"]
-font_size = 20
+font_size = 43
 
 [node name="prog_88a" type="Control"]
 layout_mode = 3
@@ -61,9 +61,9 @@ text = "Calculate"
 [node name="btnClear" type="Button" parent="."]
 layout_mode = 0
 offset_left = 456.0
-offset_top = 540.0
+offset_top = 542.0
 offset_right = 678.0
-offset_bottom = 638.0
+offset_bottom = 640.0
 theme = ExtResource("2_t6x5l")
 text = "Clear"
 

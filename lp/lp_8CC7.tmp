@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy7jvykg068db"]
+
+[ext_resource type="Script" path="res://lp_1.gd" id="1_p2cmi"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="2_3lxu6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4isw8"]
+font_size = 48
+
+[node name="LP-1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p2cmi")
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 274.0
+offset_right = 757.0
+offset_bottom = 507.0
+text = "Cost:"
+label_settings = SubResource("LabelSettings_4isw8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 17.0
+offset_right = 595.0
+offset_bottom = 84.0
+text = "Enter # of copies:"
+label_settings = SubResource("LabelSettings_4isw8")
+
+[node name="linCopies" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 19.0
+offset_right = 1010.0
+offset_bottom = 94.0
+theme = ExtResource("2_3lxu6")
+placeholder_text = " "
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 469.0
+offset_right = 222.0
+offset_bottom = 589.0
+scale = Vector2(1.385, 1.385)
+theme = ExtResource("2_3lxu6")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 466.0
+offset_right = 635.0
+offset_bottom = 586.0
+scale = Vector2(1.385, 1.385)
+theme = ExtResource("2_3lxu6")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 469.0
+offset_right = 1059.0
+offset_bottom = 589.0
+scale = Vector2(1.385, 1.385)
+theme = ExtResource("2_3lxu6")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

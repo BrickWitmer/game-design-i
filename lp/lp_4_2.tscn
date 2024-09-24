@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://sttalw2bdblk"]
+
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="1_4vh6w"]
+[ext_resource type="Script" path="res://lp/lp_4_2.gd" id="1_i3mdm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ypb3n"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_xm8su"]
+font_size = 38
+
+[node name="LP 4-2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i3mdm")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 532.0
+offset_right = 198.0
+offset_bottom = 643.0
+theme = ExtResource("1_4vh6w")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 532.0
+offset_right = 694.0
+offset_bottom = 643.0
+theme = ExtResource("1_4vh6w")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 954.0
+offset_top = 534.0
+offset_right = 1144.0
+offset_bottom = 645.0
+theme = ExtResource("1_4vh6w")
+text = "Exit"
+
+[node name="linWeight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 413.0
+offset_bottom = 105.0
+theme = ExtResource("1_4vh6w")
+placeholder_text = "Weight"
+
+[node name="linLength" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 112.0
+offset_right = 415.0
+offset_bottom = 205.0
+theme = ExtResource("1_4vh6w")
+placeholder_text = "Length"
+
+[node name="linWidth" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 212.0
+offset_right = 413.0
+offset_bottom = 305.0
+theme = ExtResource("1_4vh6w")
+placeholder_text = "Width"
+
+[node name="linHeight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 310.0
+offset_right = 413.0
+offset_bottom = 403.0
+theme = ExtResource("1_4vh6w")
+placeholder_text = "Height"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.031
+offset_left = 426.0
+offset_top = 14.0
+offset_right = 892.288
+offset_bottom = 123.0
+text = "Weight in kilograms and all 
+dimenstions in centimeters"
+label_settings = SubResource("LabelSettings_ypb3n")
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 260.0
+offset_right = 1146.0
+offset_bottom = 527.0
+label_settings = SubResource("LabelSettings_xm8su")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

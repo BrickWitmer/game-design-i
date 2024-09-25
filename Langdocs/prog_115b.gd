@@ -1,15 +1,9 @@
 extends Control
 
 
-
 func _on_btn_calc_pressed() -> void:
-	$ItemList.add_item("Number")
-	#range(stop)
-	#range(start, stop)
-	#range(start, stop, step)
-	for i in range(2,37):
-		var line = str(i)
-		$ItemList.add_item(line)
+	for i in range(2,37,2):
+		$ItemList.add_item(str(i))
 
 
 func _on_btn_clear_pressed() -> void:

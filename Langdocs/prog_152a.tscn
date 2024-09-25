@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4jdqhjtemvjn"]
+
+[ext_resource type="Script" path="res://prog_152a.gd" id="1_rdnjx"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="2_gcppy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kt68c"]
+font_size = 38
+
+[node name="prog152a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rdnjx")
+
+[node name="lblSum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 37.0
+offset_right = 1066.0
+offset_bottom = 364.0
+label_settings = SubResource("LabelSettings_kt68c")
+
+[node name="btnShow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 484.0
+offset_right = 263.0
+offset_bottom = 632.0
+theme = ExtResource("2_gcppy")
+text = "Show"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 484.0
+offset_right = 730.0
+offset_bottom = 632.0
+theme = ExtResource("2_gcppy")
+text = "Clear"
+
+[node name="btnExi" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 487.0
+offset_right = 1140.0
+offset_bottom = 635.0
+theme = ExtResource("2_gcppy")
+text = "Exit"
+
+[connection signal="pressed" from="btnShow" to="." method="_on_btn_show_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExi" to="." method="_on_btn_exi_pressed"]

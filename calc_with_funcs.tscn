@@ -30,15 +30,6 @@ offset_bottom = 192.0
 theme = ExtResource("1_eibo2")
 text = "-"
 
-[node name="btnMu" type="Button" parent="."]
-layout_mode = 0
-offset_left = 783.0
-offset_top = 72.0
-offset_right = 903.0
-offset_bottom = 192.0
-theme = ExtResource("1_eibo2")
-text = "*"
-
 [node name="btnPow" type="Button" parent="."]
 layout_mode = 0
 offset_left = 519.0
@@ -47,6 +38,15 @@ offset_right = 639.0
 offset_bottom = 320.0
 theme = ExtResource("1_eibo2")
 text = "**"
+
+[node name="btnMu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 783.0
+offset_top = 72.0
+offset_right = 903.0
+offset_bottom = 192.0
+theme = ExtResource("1_eibo2")
+text = "*"
 
 [node name="btnDiv" type="Button" parent="."]
 layout_mode = 0
@@ -130,3 +130,4 @@ theme = ExtResource("1_eibo2")
 text = "Result: "
 
 [connection signal="pressed" from="btnP" to="." method="_on_btn_p_pressed"]
+[connection signal="pressed" from="btnEq" to="." method="_on_btn_eq_pressed"]

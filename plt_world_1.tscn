@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0mksumtkcfok"]
+[gd_scene load_steps=8 format=3 uid="uid://c0mksumtkcfok"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_8kgdh"]
 [ext_resource type="PackedScene" uid="uid://cry6tp58y6ip8" path="res://plt_player.tscn" id="2_sr0tv"]
 [ext_resource type="PackedScene" uid="uid://cvb8fv5ovv4qo" path="res://interact.tscn" id="3_3y16t"]
 [ext_resource type="PackedScene" uid="uid://dr2vfqu4ogce0" path="res://dragable.tscn" id="4_cw206"]
+[ext_resource type="PackedScene" uid="uid://bc5or2s27pb60" path="res://enemy.tscn" id="5_mybin"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufwgw"]
 size = Vector2(38, 16)
@@ -17,12 +18,18 @@ script = ExtResource("1_8kgdh")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World"]
 position = Vector2(31, 0)
-polygon = PackedVector2Array(-753, 61, 44, 46, 50, 506, 50, 506, 133, 557, 221, 495, 232, 446, 343, 348, 440, 369, 440, 508, 693, 479, 649, 402, 833, 394, 901, 498, 959, 397, 1046, 394, 1090, 430, 1064, 462, 1099, 487, 1118, 513, 1081, 551, 1148, 548, 1133, 397, 1367, 386, 1501, 516, 1718, 583, 1579, 377, 2010, 340, 2085, 325, 2101, 451, 2171, 451, 2159, 562, 2306, 458, 2171, 305, 2727, 340, 2874, 475, 3013, 594, 3090, 672, 3296, 746, 3160, 647, 3293, 562, 3464, 538, 3312, 472, 3411, 426, 3455, 398, 3471, 341, 3606, 311, 3603, -229, 4690, -235, 4683, 1958, -800, 1924)
+polygon = PackedVector2Array(-753, 61, 44, 46, 50, 506, 50, 506, 133, 557, 221, 495, 232, 446, 343, 348, 440, 369, 440, 508, 693, 479, 649, 402, 833, 394, 901, 498, 959, 397, 1046, 394, 1090, 430, 1064, 462, 1099, 487, 1118, 513, 1081, 551, 1148, 548, 1133, 397, 1367, 386, 1501, 516, 1718, 583, 1579, 377, 2010, 340, 2085, 325, 2101, 451, 2171, 451, 2159, 562, 2306, 458, 2171, 305, 2727, 340, 2874, 475, 3013, 594, 3090, 672, 3296, 746, 3160, 647, 3274, 566, 3449, 566, 3422, 511, 3328, 481, 3411, 426, 3455, 398, 3471, 341, 3606, 311, 3603, -229, 4690, -235, 4683, 1958, -800, 1924)
 
 [node name="Polygon2D" type="Polygon2D" parent="World/CollisionPolygon2D"]
 
 [node name="plt_player" parent="World" instance=ExtResource("2_sr0tv")]
 position = Vector2(158, 436)
+
+[node name="plt_enemy" parent="World" instance=ExtResource("5_mybin")]
+position = Vector2(1289, 362)
+
+[node name="plt_enemy2" parent="World" instance=ExtResource("5_mybin")]
+position = Vector2(3442, 556)
 
 [node name="stratingPlatform" type="StaticBody2D" parent="."]
 position = Vector2(159, 457)
@@ -41,3 +48,6 @@ scale = Vector2(0.4, 0.32)
 
 [node name="Dragable" parent="." instance=ExtResource("4_cw206")]
 position = Vector2(228, 384)
+
+[node name="plt_enemy" parent="." instance=ExtResource("5_mybin")]
+position = Vector2(591, 471)

@@ -136,5 +136,3 @@ text = "Result: "
 [connection signal="pressed" from="btnDiv" to="." method="_on_btn_div_pressed"]
 [connection signal="pressed" from="btnMod" to="." method="_on_btn_mod_pressed"]
 [connection signal="pressed" from="btnEq" to="." method="_on_btn_eq_pressed"]
-[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
-[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

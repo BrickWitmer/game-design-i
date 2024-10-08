@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7swqsxqdnmfu" path="res://Assets/Sprites/characters.png" id="3_s17w3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0edq"]
-size = Vector2(18, 14)
+size = Vector2(20, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2op2o"]
 atlas = ExtResource("3_s17w3")
@@ -49,7 +49,7 @@ max_contacts_reported = 1
 script = ExtResource("1_ccmeg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_p0edq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

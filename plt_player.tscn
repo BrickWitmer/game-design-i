@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://7swqsxqdnmfu" path="res://Assets/Sprites/characters.png" id="3_vup44"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lvjg"]
+radius = 9.0
 height = 24.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6n4k"]
@@ -74,7 +75,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="plt_player" type="CharacterBody2D"]
+[node name="plt_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_y78sp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

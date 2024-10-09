@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvuympb62235e"]
+
+[ext_resource type="Script" path="res://change_lvl.gd" id="1_oykow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de05d"]
+size = Vector2(50, 100)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_baoqt"]
+offset = Vector3(-214.29, 0, 0)
+fractal_octaves = 10
+fractal_lacunarity = 3.25
+fractal_gain = 0.64
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gwbiq"]
+noise = SubResource("FastNoiseLite_baoqt")
+
+[node name="Change_lvl" type="Area2D"]
+script = ExtResource("1_oykow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_de05d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0976563, 0.195313)
+texture = SubResource("NoiseTexture2D_gwbiq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

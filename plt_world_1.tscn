@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0mksumtkcfok"]
+[gd_scene load_steps=9 format=3 uid="uid://c0mksumtkcfok"]
 
 [ext_resource type="Script" path="res://plt_world_1.gd" id="1_8kgdh"]
 [ext_resource type="PackedScene" uid="uid://cry6tp58y6ip8" path="res://plt_player.tscn" id="2_sr0tv"]
 [ext_resource type="PackedScene" uid="uid://cvb8fv5ovv4qo" path="res://interact.tscn" id="3_3y16t"]
+[ext_resource type="PackedScene" uid="uid://dvuympb62235e" path="res://change_lvl.tscn" id="4_37bcd"]
 [ext_resource type="PackedScene" uid="uid://dr2vfqu4ogce0" path="res://dragable.tscn" id="4_cw206"]
 [ext_resource type="PackedScene" uid="uid://bc5or2s27pb60" path="res://enemy.tscn" id="5_mybin"]
 
@@ -26,11 +27,15 @@ polygon = PackedVector2Array(-753, 61, 44, 46, 50, 506, 50, 506, 133, 557, 221, 
 position = Vector2(158, 436)
 
 [node name="plt_enemy" parent="World" instance=ExtResource("5_mybin")]
-position = Vector2(1292, 386)
+position = Vector2(1350, 383)
 rotation = -0.055789
 
 [node name="plt_enemy2" parent="World" instance=ExtResource("5_mybin")]
 position = Vector2(3442, 556)
+
+[node name="Change_lvl" parent="World" instance=ExtResource("4_37bcd")]
+position = Vector2(3611, 261)
+next_level = "plt_world_2"
 
 [node name="stratingPlatform" type="StaticBody2D" parent="."]
 position = Vector2(159, 457)

@@ -31,8 +31,6 @@ func _physics_process(delta: float) -> void:
 	
 	update_animation(direction)
 	
-	if Input.is_action_just_pressed("ui_cancel"):
-		gravity_on = not gravity_on
 	if Input.is_action_just_pressed("ui_home"):
 		self.scale *= 2
 	if Input.is_action_just_pressed("ui_end"):
@@ -49,6 +47,9 @@ func _physics_process(delta: float) -> void:
 		self.position.y += JUMP_VELOCITY / 2.0
 	if Input.is_action_just_pressed("ui_text_delete"):
 		self.position.y -= JUMP_VELOCITY / 2.0
+	if Input.is_action_just_pressed("pause"):
+		$Camera2D/Pause_menu.show()
+		get_tree().paused = true
 
 	move_and_slide()
 

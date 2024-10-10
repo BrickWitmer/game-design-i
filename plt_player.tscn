@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cry6tp58y6ip8"]
+[gd_scene load_steps=14 format=3 uid="uid://cry6tp58y6ip8"]
 
 [ext_resource type="Texture2D" uid="uid://bdafa2wnsiof8" path="res://icon.svg" id="1_7nmrh"]
 [ext_resource type="Script" path="res://plt_player.gd" id="1_y78sp"]
 [ext_resource type="Texture2D" uid="uid://7swqsxqdnmfu" path="res://Assets/Sprites/characters.png" id="3_vup44"]
+[ext_resource type="PackedScene" uid="uid://ber7v3tpcldo4" path="res://pause_menu.tscn" id="4_hqnhj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1lvjg"]
 radius = 9.0
@@ -86,9 +87,18 @@ texture = ExtResource("1_7nmrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1lvjg")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_xqmh6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+
+[node name="Pause_menu" parent="Camera2D" instance=ExtResource("4_hqnhj")]
+visible = false
+offset_left = -572.0
+offset_top = -324.0
+offset_right = -572.0
+offset_bottom = -324.0
+size_flags_horizontal = 4
+size_flags_vertical = 4

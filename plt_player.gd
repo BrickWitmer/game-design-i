@@ -63,4 +63,4 @@ func update_animation(direction):
 		anim.play("Walk")
 		anim.flip_h = direction < 0 #flip sprite if moving left
 	else:
-		anim.play("default")
+		anim.play("Idle")

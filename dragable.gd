@@ -11,7 +11,9 @@ func _process(delta):
 func _on_button_button_down() -> void:
 	dragging = true
 	offset = get_global_mouse_position() - self.global_position
+	freeze = true
 
 
 func _on_button_button_up() -> void:
 	dragging = false
+	freeze = false

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6k47uw4l3y6k"]
+
+[ext_resource type="Script" path="res://death_plane.gd" id="1_we4q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7dqm"]
+size = Vector2(3848, 20)
+
+[node name="Death_plane" type="RigidBody2D"]
+freeze = true
+script = ExtResource("1_we4q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(114.185, 1)
+shape = SubResource("RectangleShape2D_q7dqm")

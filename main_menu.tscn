@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://qlduytmaho4x"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_gt3wc"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="1_r4i7k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tuyfe"]
+font_size = 60
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gt3wc")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 48.0
+offset_right = 916.0
+offset_bottom = 116.0
+text = "Don't know what to call this"
+label_settings = SubResource("LabelSettings_tuyfe")
+
+[node name="Start_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 217.0
+offset_right = 825.0
+offset_bottom = 321.0
+theme = ExtResource("1_r4i7k")
+text = "Start"
+
+[node name="Quit_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 330.0
+offset_right = 824.0
+offset_bottom = 434.0
+theme = ExtResource("1_r4i7k")
+text = "Quit"
+
+[connection signal="pressed" from="Start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="Quit_btn" to="." method="_on_quit_btn_pressed"]

@@ -372,7 +372,7 @@ script = ExtResource("1_f5558")
 
 [node name="Animated2dSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fmiws")
-animation = &"idle_down"
+animation = &"idle_side"
 autoplay = "idle_down"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -380,6 +380,11 @@ zoom = Vector2(5, 5)
 
 [node name="Pause_menu" parent="Camera2D" instance=ExtResource("3_c7rli")]
 visible = false
+offset_left = -119.0
+offset_top = -66.0
+offset_right = -119.0
+offset_bottom = -66.0
+scale = Vector2(0.207967, 0.207967)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b38r0")

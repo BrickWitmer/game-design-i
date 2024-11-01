@@ -1,8 +1,9 @@
-[gd_scene load_steps=49 format=3 uid="uid://bq4clsc0ojslv"]
+[gd_scene load_steps=50 format=3 uid="uid://bq4clsc0ojslv"]
 
 [ext_resource type="Texture2D" uid="uid://dn5ogdr7bt6xy" path="res://Assets/Sprites/Zelda-like/character.png" id="1_0y451"]
 [ext_resource type="Script" path="res://Zelda_like/td_player.gd" id="1_f5558"]
 [ext_resource type="PackedScene" uid="uid://ber7v3tpcldo4" path="res://pause_menu.tscn" id="3_c7rli"]
+[ext_resource type="PackedScene" uid="uid://baxj7kq0k7b10" path="res://Zelda_like/player_hud.tscn" id="4_chq65"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcx3y"]
 atlas = ExtResource("1_0y451")
@@ -367,7 +368,7 @@ animations = [{
 radius = 8.0
 height = 24.0
 
-[node name="td_player" type="CharacterBody2D" groups=["player"]]
+[node name="td_player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_f5558")
 
 [node name="Animated2dSprite" type="AnimatedSprite2D" parent="."]
@@ -388,3 +389,6 @@ scale = Vector2(0.207967, 0.207967)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b38r0")
+
+[node name="PlayerHUD" parent="." instance=ExtResource("4_chq65")]
+visible = false

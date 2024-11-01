@@ -14,10 +14,6 @@ config/name="Game-design-I"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[global_group]
-
-Player=""
-
 [input]
 
 ui_left={

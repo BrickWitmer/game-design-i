@@ -12,9 +12,20 @@ enum STATES {IDLE=0, DEAD, DAMAGED, ATTACKING, CHARGING}
 	"secondaties": []
 }
 
-
 var inertia = Vector2()
 var look_direction = Vector2.DOWN
+
+@onready var p_HUD = get_tree().get_first_node_in_group("HUD")
+
+func _ready() -> void:
+	p_HUD.show()
+
+func pickup_health(value):
+	data.health += value
+	data.health = clamp(data.health, 0, data.max_health)
+
+func pickup_money(value):
+	data.money += value
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2(

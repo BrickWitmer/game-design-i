@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://duk6k1tv3y3iw"]
+[gd_scene load_steps=5 format=4 uid="uid://duk6k1tv3y3iw"]
 
 [ext_resource type="TileSet" uid="uid://ckjhc8124hcij" path="res://Zelda_like/td_world_one.tres" id="1_eclt0"]
 [ext_resource type="PackedScene" uid="uid://bq4clsc0ojslv" path="res://Zelda_like/td_player.tscn" id="2_o6q6i"]
+[ext_resource type="PackedScene" uid="uid://cs7kjmw7jenj2" path="res://Assets/entities/items/mini_heart.tscn" id="3_1wfs3"]
+[ext_resource type="PackedScene" uid="uid://c47a828crm1vi" path="res://Assets/entities/items/coin.tscn" id="4_yobn0"]
 
 [node name="td_world one" type="Node2D"]
 
@@ -16,3 +18,21 @@ tile_set = ExtResource("1_eclt0")
 
 [node name="td_player" parent="." instance=ExtResource("2_o6q6i")]
 position = Vector2(76, 33)
+
+[node name="MiniHeart" parent="." instance=ExtResource("3_1wfs3")]
+position = Vector2(-21, -7)
+
+[node name="coin" parent="." instance=ExtResource("4_yobn0")]
+position = Vector2(27, 30)
+
+[node name="coin2" parent="." instance=ExtResource("4_yobn0")]
+position = Vector2(86, -52)
+
+[node name="coin3" parent="." instance=ExtResource("4_yobn0")]
+position = Vector2(170, -2)
+
+[node name="MiniHeart2" parent="." instance=ExtResource("3_1wfs3")]
+position = Vector2(-8, 74)
+
+[node name="MiniHeart3" parent="." instance=ExtResource("3_1wfs3")]
+position = Vector2(140, -53)

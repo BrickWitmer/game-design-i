@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Game-design-I"
+run/main_scene="res://Zelda_like/td_world_one.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[debug]
+
+gdscript/warnings/integer_division=0
 
 [input]
 

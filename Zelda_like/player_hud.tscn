@@ -46,8 +46,8 @@ frame = 132
 [node name="Money" type="Label" parent="PlayerMoney"]
 layout_mode = 0
 offset_left = 79.0
-offset_top = 224.0
+offset_top = 225.0
 offset_right = 422.0
-offset_bottom = 266.0
+offset_bottom = 267.0
 text = "000"
 label_settings = SubResource("LabelSettings_mjkxu")

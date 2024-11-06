@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://db1h6qg6bd5ki"]
+
+[ext_resource type="Script" path="res://normal_coin.gd" id="1_qsdmy"]
+[ext_resource type="Texture2D" uid="uid://djisunclrywvl" path="res://Assets/Sprites/Zelda-like/objects.png" id="2_co837"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g35cn"]
+atlas = ExtResource("2_co837")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuay3"]
+atlas = ExtResource("2_co837")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppaak"]
+atlas = ExtResource("2_co837")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa34f"]
+atlas = ExtResource("2_co837")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggnvk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g35cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuay3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppaak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa34f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_haron"]
+radius = 10.0499
+
+[node name="Normal_coin" type="Node2D"]
+script = ExtResource("1_qsdmy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 0.992157, 1, 1)
+sprite_frames = SubResource("SpriteFrames_ggnvk")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_haron")

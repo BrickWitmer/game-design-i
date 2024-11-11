@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=4 uid="uid://duk6k1tv3y3iw"]
+[gd_scene load_steps=8 format=4 uid="uid://duk6k1tv3y3iw"]
 
 [ext_resource type="TileSet" uid="uid://ckjhc8124hcij" path="res://Zelda_like/td_world_one.tres" id="1_eclt0"]
 [ext_resource type="PackedScene" uid="uid://bq4clsc0ojslv" path="res://Zelda_like/td_player.tscn" id="2_o6q6i"]
 [ext_resource type="PackedScene" uid="uid://cs7kjmw7jenj2" path="res://Assets/entities/items/mini_heart.tscn" id="3_1wfs3"]
 [ext_resource type="PackedScene" uid="uid://c47a828crm1vi" path="res://Assets/entities/items/coin.tscn" id="4_yobn0"]
+[ext_resource type="PackedScene" uid="uid://db1h6qg6bd5ki" path="res://Assets/entities/items/normal_coin.tscn" id="5_yi5j4"]
+[ext_resource type="PackedScene" uid="uid://bjevfqs2k6jpb" path="res://Assets/entities/items/diamond_coin.tscn" id="6_hqdi4"]
+[ext_resource type="PackedScene" uid="uid://c25bvhfb00cev" path="res://Zelda_like/td_enemy.tscn" id="7_rpdhe"]
 
 [node name="td_world one" type="Node2D"]
 
@@ -36,3 +39,27 @@ position = Vector2(-8, 74)
 
 [node name="MiniHeart3" parent="." instance=ExtResource("3_1wfs3")]
 position = Vector2(140, -53)
+
+[node name="Normal_coin" parent="." instance=ExtResource("5_yi5j4")]
+position = Vector2(96, 77)
+
+[node name="Normal_coin2" parent="." instance=ExtResource("5_yi5j4")]
+position = Vector2(167, 43)
+
+[node name="Normal_coin3" parent="." instance=ExtResource("5_yi5j4")]
+position = Vector2(128, 0)
+
+[node name="Diamond_coin" parent="." instance=ExtResource("6_hqdi4")]
+position = Vector2(-47, 37)
+
+[node name="Diamond_coin2" parent="." instance=ExtResource("6_hqdi4")]
+position = Vector2(29, 10)
+
+[node name="Diamond_coin3" parent="." instance=ExtResource("6_hqdi4")]
+position = Vector2(46, -21)
+
+[node name="Diamond_coin4" parent="." instance=ExtResource("6_hqdi4")]
+position = Vector2(54, 75)
+
+[node name="td_enemy" parent="." instance=ExtResource("7_rpdhe")]
+position = Vector2(36, -56)

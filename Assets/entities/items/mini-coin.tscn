@@ -1,22 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://c47a828crm1vi"]
+[gd_scene load_steps=9 format=3 uid="uid://jb7xixowcdwi"]
 
-[ext_resource type="Texture2D" uid="uid://djisunclrywvl" path="res://Assets/Sprites/Zelda-like/objects.png" id="1_310xt"]
-[ext_resource type="Script" path="res://Assets/entities/items/coin.gd" id="1_s4uua"]
+[ext_resource type="Script" path="res://Assets/entities/items/coin.gd" id="1_atsg5"]
+[ext_resource type="Texture2D" uid="uid://djisunclrywvl" path="res://Assets/Sprites/Zelda-like/objects.png" id="2_rfqeo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g35cn"]
-atlas = ExtResource("1_310xt")
+atlas = ExtResource("2_rfqeo")
 region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xuay3"]
-atlas = ExtResource("1_310xt")
+atlas = ExtResource("2_rfqeo")
 region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ppaak"]
-atlas = ExtResource("1_310xt")
+atlas = ExtResource("2_rfqeo")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oa34f"]
-atlas = ExtResource("1_310xt")
+atlas = ExtResource("2_rfqeo")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cda6j"]
@@ -43,7 +43,7 @@ animations = [{
 radius = 10.0499
 
 [node name="mini_coin" type="Node2D"]
-script = ExtResource("1_s4uua")
+script = ExtResource("1_atsg5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.324724, 0.202334, 0.0933846, 1)

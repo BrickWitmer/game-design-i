@@ -46,12 +46,12 @@ radius = 10.0499
 script = ExtResource("1_qsdmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 0.992157, 1, 1)
 sprite_frames = SubResource("SpriteFrames_ggnvk")
 autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
+modulate = Color(100, 100, 100, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color(100, 100, 100, 1)
 shape = SubResource("CircleShape2D_haron")

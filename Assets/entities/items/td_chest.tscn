@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjnm0ecr6l0y0"]
+
+[ext_resource type="Script" path="res://Assets/entities/items/td_chest.gd" id="1_2vutq"]
+[ext_resource type="Texture2D" uid="uid://djisunclrywvl" path="res://Assets/Sprites/Zelda-like/objects.png" id="2_lakx0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sav8v"]
+radius = 15.5242
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgs17"]
+size = Vector2(14, 11)
+
+[node name="td_chest" type="Node2D" groups=["Chest", "Interactables"]]
+script = ExtResource("1_2vutq")
+contents = {
+"diamond_coin": -1,
+"gold_coin": -1,
+"mini_coin": -1,
+"mini_heart": -1,
+"normal_coin": -1
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+texture = ExtResource("2_lakx0")
+hframes = 34
+vframes = 20
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("CircleShape2D_sav8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_pgs17")

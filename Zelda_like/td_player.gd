@@ -22,8 +22,17 @@ var charge_start_time = 0
 
 var slash_scene = \
 preload("res://Assets/entities/attacks/slash.tscn")
+var damage_shader = \
+preload("res://Assets/Shaders/take_damage.tres")
+var attack_sound = preload("res://Assets/Sounds/slash.wav")
+var charge = preload("res://Assets/Shaders/Charge.tres")
+var pick_up = preload("res://Assets/Sounds/pickupCoin.wav")
+var death_sound = preload("res://Assets/Sounds/synth.wav")
+var hurt_sound = preload("res://Assets/Sounds/hitHurt.wav")
+var charge_sound = preload("res://Assets/Sounds/synth (1).wav")
 
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
+@onready var aud_player = $AudioStreamPlayer2D
 
 func get_direction_name():
 	return ["right","down","left","up"][
@@ -38,13 +47,18 @@ func attack():
 	$Animated2dSprite.play("swipe_" + dir_name)
 	attack_direction = look_direction
 	var slash = slash_scene.instantiate()
+	
 	slash.position = attack_direction * 20.0
 	slash.rotation = Vector2().angle_to_point(-attack_direction)
 	add_child(slash)
+	aud_player.stream = attack_sound
+	aud_player.play()
 	animation_lock = 0.2
 
 func charged_attack():
 	data.state = STATES.ATTACKING
+	$Animated2dSprite.material = charge
+	$Animated2dSprite.material.set_shader_parameter("intensity", 0.5)
 	$Animated2dSprite.play("swipe_charge")
 	attack_direction = -look_direction
 	damage_lock = 0.3
@@ -57,6 +71,7 @@ func charged_attack():
 		slash.rotation = Vector2().angle_to_point(-dir)
 		slash.damage *= 1.5
 		add_child(slash)
+		
 		await get_tree().create_timer(0.03)
 	animation_lock = 0.2
 	await $Animated2dSprite.animation_finished
@@ -72,6 +87,12 @@ func pickup_health(value):
 func pickup_money(value):
 	data.money += value
 
+func pickup_heart_container(value):
+	data.max_health += value
+	data.max_health = clampf(data.max_health,60,MAX_OBTAINABLE_HEALTH)
+	p_HUD.draw_hearts()
+	data.health = data.max_health
+
 signal health_depleted
 
 func take_damage(dmg):
@@ -80,13 +101,15 @@ func take_damage(dmg):
 		data.state = STATES.DAMAGED
 		damage_lock = 0.5
 		animation_lock = dmg * 0.005
-		#TODO: damage shader
+		$Animated2dSprite.material = damage_shader.duplicate()
+		$Animated2dSprite.material.set_shader_parameter("intensity", 0.5)
 		if data.health > 0:
-			# TODO: play damage sound
+			
 			pass
 		else:
 			data.state = STATES.DEAD
-			# TODO: death animation & sound
+			aud_player.stream = death_sound
+			aud_player.play()
 			await get_tree().create_timer(0.5).timeout
 			health_depleted.emit()
 		
@@ -97,6 +120,11 @@ func _physics_process(delta: float) -> void:
 	damage_lock = max(damage_lock-delta, 0.0)
 	
 	if animation_lock == 0 and data.state != STATES.DEAD:
+		if data.state == STATES.DAMAGED or max(damage_lock-delta, 0.0 ):
+			aud_player.stream = hurt_sound
+			aud_player.play()
+			$Animated2dSprite.material = null
+		
 		if data.state != STATES.CHARGING:
 			data.state = STATES.IDLE
 	
@@ -128,6 +156,12 @@ func _physics_process(delta: float) -> void:
 				charged_attack()
 			else:
 				data.state = STATES.IDLE
+		if Input.is_action_just_pressed("ui_select"):
+			for entity in get_tree().get_nodes_in_group("Interactables"):
+				if entity.in_range(self):
+					entity.interact(self)
+					data.state = STATES.IDLE
+					return
 
 	if Input.is_action_just_pressed("ui_cancel"):
 		$Camera2D/Pause_menu.show()

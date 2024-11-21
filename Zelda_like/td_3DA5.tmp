@@ -50,7 +50,7 @@ vframes = 11
 frame = 82
 
 [node name="td_chest" parent="." instance=ExtResource("7_fuiax")]
-position = Vector2(119, -93)
+position = Vector2(62, 3)
 contents = {
 "diamond_coin": 1,
 "gold_coin": 10,

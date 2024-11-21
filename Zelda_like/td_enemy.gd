@@ -42,7 +42,7 @@ var damage_lock = 0.0
 var animation_lock = 0.0
 var knockback = 128.0
 var vision_distance = 50.0
-var money_value = 5.0
+var money_value = clamp(randi() ,1 ,10)
 
 signal recovered
 
@@ -50,6 +50,40 @@ signal recovered
 @onready var rcM = $RayCast2DM
 @onready var rcL = $RayCast2DL
 @onready var anim_player = $AnimatedSprite2D
+@onready var aud_player = $AudioStreamPlayer2D
+
+var drops = ["drop_coin","drop_heart"]
+var coin_scene = preload("res://Assets/entities/items/mini_coin.tscn")
+var gold_coin_scene = preload("res://Assets/entities/items/gold_coin.tscn")
+var diamond_coin_scene = preload("res://Assets/entities/items/diamond_coin.tscn")
+var heart_scene = preload("res://Assets/entities/items/mini_heart.tscn")
+var damage_shader = preload("res://Assets/Shaders/take_damage.tres")
+var death_sound = preload("res://Assets/Sounds/explosion.wav")
+
+func vec2_offset():
+	return Vector2(randf_range(-10.0, 10.0), randf_range(-10.0, 10.0))
+
+func drop_scene(item_scene):
+	item_scene.global_position = self.global_position + vec2_offset()
+	get_tree().current_scene.add_child(item_scene)
+
+func drop_heart():
+	drop_scene(heart_scene.instantiate())
+
+func drop_coin():
+	var copper_coin = coin_scene.instantiate()
+	var gold_coin = gold_coin_scene.instantiate()
+	var diamond_coin = diamond_coin_scene.instantiate()
+	if money_value <= 7:
+		drop_scene(copper_coin)
+	if money_value > 7:
+		drop_scene(gold_coin)
+
+func drop_items():
+	var num_drops = randi() % 3 + 1
+	for i in range(num_drops):
+		var rnd_drop = drops[randi() % drops.size()]
+		call_deferred(rnd_drop)
 
 func turn_toward_player_location(location: Vector2):
 	# Set the state to move toard the player
@@ -68,15 +102,18 @@ func turn_toward_player_location(location: Vector2):
 	AI_STATE = closest_state
 
 func take_damage(dmg, attacker = null):
-	#TODO
 	if damage_lock == 0.0:
 		AI_STATE = STATES.DAMAGED
 		HEALTH -= dmg
 		damage_lock = 0.2
-		# TODO: damage shader
+		var damage_intensity = clamp(1.0-((HEALTH+0.01)/MAX_HEALTH), 0.1, 0.8)
+		$AnimatedSprite2D.material = damage_shader.duplicate()
+		$AnimatedSprite2D.material.set_shader_parameter("intensity", damage_intensity)
 		if HEALTH <= 0:
-			# TODO: drop item
-			# TODO: play death sound
+			drop_items()
+			aud_player.stream = death_sound
+			aud_player.play()
+			await aud_player.finished
 			queue_free()
 		else:
 			if attacker != null:
@@ -98,7 +135,7 @@ func _physics_process(delta: float) -> void:
 			raydir.rotated(deg_to_rad(45)).normalized() * vision_distance
 	if animation_lock == 0.0:
 		if AI_STATE == STATES.DAMAGED:
-			#TODO: reset shader
+			$AnimatedSprite2D.material = null
 			AI_STATE = STATES.IDLE
 			recovered.emit()
 		for player in get_tree().get_nodes_in_group("Player"):

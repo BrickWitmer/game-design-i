@@ -43,3 +43,4 @@ func _process(delta: float) -> void:
 			heart.frame = 4
 	var money = player.data.money
 	$PlayerMoney/Money.text = str(money)
+	

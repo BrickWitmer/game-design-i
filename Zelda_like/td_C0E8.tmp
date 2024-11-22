@@ -52,11 +52,11 @@ frame = 82
 [node name="td_chest" parent="." instance=ExtResource("7_fuiax")]
 position = Vector2(119, -93)
 contents = {
-"diamond_coin": -1,
-"gold_coin": -1,
+"diamond_coin": 1,
+"gold_coin": 10,
 "mini_coin": -1,
-"mini_heart": 3,
-"normal_coin": 2
+"mini_heart": 1,
+"normal_coin": -1
 }
 
 [editable path="Change_lvl"]

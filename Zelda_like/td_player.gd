@@ -57,8 +57,6 @@ func attack():
 
 func charged_attack():
 	data.state = STATES.ATTACKING
-	$Animated2dSprite.material = charge
-	$Animated2dSprite.material.set_shader_parameter("intensity", 0.5)
 	$Animated2dSprite.play("swipe_charge")
 	attack_direction = -look_direction
 	damage_lock = 0.3

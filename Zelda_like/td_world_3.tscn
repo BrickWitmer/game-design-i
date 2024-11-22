@@ -1076,6 +1076,7 @@ texture = ExtResource("1_4v0qq")
 29:13/0 = 0
 11:25/size_in_atlas = Vector2i(3, 3)
 11:25/0 = 0
+11:25/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8.68626, -15.8135, 9.13171, -15.1453, 11.8044, -4.67722, 8, 6.01356, -8, 5.79084, -11.5817, -5.34539)
 
 [sub_resource type="TileSet" id="TileSet_rlh43"]
 physics_layer_0/collision_layer = 1
@@ -1108,6 +1109,13 @@ visible = false
 
 [node name="td_chest" parent="." instance=ExtResource("4_guf87")]
 position = Vector2(331, -74)
+contents = {
+"diamond_coin": -1,
+"gold_coin": 1,
+"mini_coin": 2,
+"mini_heart": 1,
+"normal_coin": -1
+}
 
 [node name="td_enemy" parent="." instance=ExtResource("5_dt113")]
 position = Vector2(22, 70)

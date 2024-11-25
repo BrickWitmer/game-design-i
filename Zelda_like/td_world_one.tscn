@@ -49,6 +49,16 @@ hframes = 8
 vframes = 11
 frame = 82
 
+[node name="Change_lvl" parent="Change_lvl" instance=ExtResource("5_80d1y")]
+position = Vector2(-8, -114)
+next_level = "Zelda_like/td_world_3"
+
+[node name="CollisionShape2D" parent="Change_lvl/Change_lvl" index="0"]
+position = Vector2(5, 280)
+
+[node name="Sprite2D" parent="Change_lvl/Change_lvl" index="1"]
+visible = false
+
 [node name="td_chest" parent="." instance=ExtResource("7_fuiax")]
 position = Vector2(119, -93)
 contents = {
@@ -60,3 +70,4 @@ contents = {
 }
 
 [editable path="Change_lvl"]
+[editable path="Change_lvl/Change_lvl"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfxbfonyl4uyf"]
+
+[ext_resource type="PackedScene" uid="uid://ber7v3tpcldo4" path="res://pause_menu.tscn" id="1_r2e1k"]
+[ext_resource type="Theme" uid="uid://2sh8kniwmbuq" path="res://Big_Font.tres" id="2_lx2l0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_do7im"]
+font_size = 48
+font_color = Color(1, 0, 0, 1)
+outline_size = 17
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0.213991, 0.0197222, 0.03526, 1)
+shadow_offset = Vector2(7.48, 8.375)
+
+[node name="Death_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Pause_menu" parent="." instance=ExtResource("1_r2e1k")]
+layout_mode = 1
+
+[node name="Panel" parent="Pause_menu" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" parent="Pause_menu/Panel/VBoxContainer" index="0"]
+visible = false
+text = "Restart"
+
+[node name="Restart" type="Button" parent="Pause_menu/Panel/VBoxContainer" index="1"]
+layout_mode = 2
+theme = ExtResource("2_lx2l0")
+text = "Restart"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -118.0
+offset_top = -286.0
+offset_right = 198.0
+offset_bottom = -190.0
+text = "You died"
+label_settings = SubResource("LabelSettings_do7im")
+
+[connection signal="pressed" from="Pause_menu/Panel/VBoxContainer/Restart" to="Pause_menu" method="_on_restart_pressed"]
+
+[editable path="Pause_menu"]

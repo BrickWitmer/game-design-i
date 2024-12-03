@@ -1,9 +1,10 @@
-[gd_scene load_steps=50 format=3 uid="uid://bq4clsc0ojslv"]
+[gd_scene load_steps=51 format=3 uid="uid://bq4clsc0ojslv"]
 
 [ext_resource type="Texture2D" uid="uid://dn5ogdr7bt6xy" path="res://Assets/Sprites/Zelda-like/character.png" id="1_0y451"]
 [ext_resource type="Script" path="res://Zelda_like/td_player.gd" id="1_f5558"]
 [ext_resource type="PackedScene" uid="uid://ber7v3tpcldo4" path="res://pause_menu.tscn" id="3_c7rli"]
 [ext_resource type="PackedScene" uid="uid://baxj7kq0k7b10" path="res://Zelda_like/player_hud.tscn" id="4_chq65"]
+[ext_resource type="PackedScene" uid="uid://bfxbfonyl4uyf" path="res://death_screen.tscn" id="4_n61gc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcx3y"]
 atlas = ExtResource("1_0y451")
@@ -386,6 +387,10 @@ offset_top = -66.0
 offset_right = -119.0
 offset_bottom = -66.0
 scale = Vector2(0.207967, 0.207967)
+
+[node name="Death_Screen" parent="Camera2D" instance=ExtResource("4_n61gc")]
+visible = false
+scale = Vector2(0.202214, 0.206283)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_b38r0")

@@ -30,6 +30,7 @@ var pick_up = preload("res://Assets/Sounds/pickupCoin.wav")
 var death_sound = preload("res://Assets/Sounds/synth.wav")
 var hurt_sound = preload("res://Assets/Sounds/hitHurt.wav")
 var charge_sound = preload("res://Assets/Sounds/synth (1).wav")
+var charge_in = preload("res://Assets/Shaders/Charge.tres")
 
 @onready var p_HUD = get_tree().get_first_node_in_group("HUD")
 @onready var aud_player = $AudioStreamPlayer2D
@@ -152,6 +153,7 @@ func _physics_process(delta: float) -> void:
 			if charge_start_time >= charge_time and \
 			data.state == STATES.CHARGING:
 				charged_attack()
+				$Animated2dSprite.material = null
 			else:
 				data.state = STATES.IDLE
 		if Input.is_action_just_pressed("ui_select"):
@@ -160,11 +162,16 @@ func _physics_process(delta: float) -> void:
 					entity.interact(self)
 					data.state = STATES.IDLE
 					return
+	if data.state == STATES.DEAD:
+		$Camera2D/Death_Screen.show()
+		get_tree().paused = true
 
+	if charge_start_time >= charge_time and data.state == STATES.CHARGING:
+			$Animated2dSprite.material = charge_in.duplicate()
+			$Animated2dSprite.material.set_shader_parameter("intensity", 0.5)
 	if Input.is_action_just_pressed("ui_cancel"):
 		$Camera2D/Pause_menu.show()
 		get_tree().paused = true
-	pass
 
 func update_animation(direction):
 	var a_name = "idle_"

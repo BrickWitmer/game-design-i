@@ -2181,7 +2181,7 @@ position = Vector2(90, 23)
 position = Vector2(180, 85)
 
 [node name="td_player" parent="." instance=ExtResource("4_mc6gf")]
-position = Vector2(40, 102)
+position = Vector2(40, 105)
 
 [node name="Change_lvl" parent="." instance=ExtResource("5_rt7p2")]
 position = Vector2(60, 79)

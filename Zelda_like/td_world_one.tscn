@@ -54,7 +54,7 @@ position = Vector2(-8, -114)
 next_level = "Zelda_like/td_world_3"
 
 [node name="CollisionShape2D" parent="Change_lvl/Change_lvl" index="0"]
-position = Vector2(5, 280)
+position = Vector2(5, 291)
 
 [node name="Sprite2D" parent="Change_lvl/Change_lvl" index="1"]
 visible = false
@@ -62,9 +62,6 @@ visible = false
 [node name="td_chest" parent="." instance=ExtResource("7_fuiax")]
 position = Vector2(119, -93)
 contents = {
-"diamond_coin": -1,
-"gold_coin": -1,
-"mini_coin": -1,
 "mini_heart": 3,
 "normal_coin": 2
 }

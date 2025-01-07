@@ -77,7 +77,10 @@ func charged_attack():
 	data.state = STATES.IDLE
 
 func _ready() -> void:
+	if Ahhhh.data != {}:
+		self.data = Ahhhh.data
 	p_HUD.show()
+	p_HUD.draw_hearts()
 
 func pickup_health(value):
 	data.health += value

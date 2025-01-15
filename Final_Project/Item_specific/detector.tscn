@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://coyn13g4x8vb8"]
+
+[ext_resource type="Script" path="res://Final_Project/detector.gd" id="1_4k5fw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efxcm"]
+size = Vector2(6, 6)
+
+[node name="Detector" type="Area2D"]
+monitorable = false
+script = ExtResource("1_4k5fw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_efxcm")

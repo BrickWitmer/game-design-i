@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://yq7lam0kx2uq"]
+
+[ext_resource type="PackedScene" uid="uid://bmv0qada7t2vn" path="res://Final_Project/transportation_belt.tscn" id="1_wuiwy"]
+[ext_resource type="PackedScene" uid="uid://q80frsnsu42l" path="res://Final_Project/Items/item.tscn" id="2_wxkeo"]
+
+[node name="Test_World" type="Node2D"]
+
+[node name="TransportationBelt" parent="." instance=ExtResource("1_wuiwy")]
+position = Vector2(8, 8)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.785, 3.785)
+
+[node name="Item" parent="." instance=ExtResource("2_wxkeo")]
+position = Vector2(11, 8)
+scale = Vector2(0.185, 0.185)

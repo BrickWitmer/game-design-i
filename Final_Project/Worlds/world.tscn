@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cadlqvi70177c"]
+
+[ext_resource type="PackedScene" uid="uid://bmv0qada7t2vn" path="res://Final_Project/transportation_belt.tscn" id="1_lbrn0"]
+[ext_resource type="PackedScene" uid="uid://brv4mq1aufkb6" path="res://Final_Project/conveyer.tscn" id="3_7gu7l"]
+[ext_resource type="PackedScene" uid="uid://btoiec1ej8ye7" path="res://Final_Project/Drills/drill.tscn" id="3_mb8m4"]
+[ext_resource type="PackedScene" uid="uid://sqadjs7e1kdo" path="res://Final_Project/Items/item_test.tscn" id="4_5o3um"]
+[ext_resource type="PackedScene" uid="uid://v4y73n83i7ow" path="res://Final_Project/fp_player.tscn" id="5_l1iw2"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_v2wlm"]
+scenes/1/scene = ExtResource("1_lbrn0")
+
+[sub_resource type="TileSet" id="TileSet_i5d42"]
+sources/0 = SubResource("TileSetScenesCollectionSource_v2wlm")
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.505, 2.505)
+
+[node name="Conveyer" parent="." instance=ExtResource("3_7gu7l")]
+position = Vector2(-12, 50)
+
+[node name="item_test" parent="." instance=ExtResource("4_5o3um")]
+position = Vector2(-12, 50)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 250, 255, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 250, 255, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 250, 255, 5, 0, 0, 0, 0, 0, 0, 0, 1, 0, 250, 255, 6, 0, 0, 0, 0, 0, 0, 0, 1, 0)
+tile_set = SubResource("TileSet_i5d42")
+
+[node name="fp_player" parent="." instance=ExtResource("5_l1iw2")]
+position = Vector2(37, 39)
+
+[node name="Drill" parent="." instance=ExtResource("3_mb8m4")]
+position = Vector2(-72, 56)
+
+[connection signal="body_entered" from="TileMapLayer/TransportationBelt" to="TileMapLayer/TransportationBelt" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/TransportationBelt" to="TileMapLayer/TransportationBelt" method="_on_body_exited"]
+[connection signal="mouse_entered" from="TileMapLayer/TransportationBelt" to="TileMapLayer/TransportationBelt" method="_on_mouse_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@99269" to="TileMapLayer/@Area2D@99269" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/@Area2D@99269" to="TileMapLayer/@Area2D@99269" method="_on_body_exited"]
+[connection signal="mouse_entered" from="TileMapLayer/@Area2D@99269" to="TileMapLayer/@Area2D@99269" method="_on_mouse_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@99270" to="TileMapLayer/@Area2D@99270" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/@Area2D@99270" to="TileMapLayer/@Area2D@99270" method="_on_body_exited"]
+[connection signal="mouse_entered" from="TileMapLayer/@Area2D@99270" to="TileMapLayer/@Area2D@99270" method="_on_mouse_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@99271" to="TileMapLayer/@Area2D@99271" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMapLayer/@Area2D@99271" to="TileMapLayer/@Area2D@99271" method="_on_body_exited"]
+[connection signal="mouse_entered" from="TileMapLayer/@Area2D@99271" to="TileMapLayer/@Area2D@99271" method="_on_mouse_entered"]

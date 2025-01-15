@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://brv4mq1aufkb6"]
+
+[ext_resource type="Script" path="res://conveyer.gd" id="1_llcib"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5o7kn"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v4yty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47rtn"]
+size = Vector2(64, 66)
+
+[node name="Conveyer" type="Node2D" groups=["Conveyor"]]
+scale = Vector2(0.35, 0.35)
+script = ExtResource("1_llcib")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_5o7kn")
+scale = Vector2(64, 66)
+texture = SubResource("PlaceholderTexture2D_v4yty")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 10)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_47rtn")
+
+[node name="Orient" type="Node2D" parent="."]
+position = Vector2(0, 9)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://btoiec1ej8ye7"]
+
+[ext_resource type="Script" path="res://Final_Project/Drills/drill.gd" id="1_3jheq"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ggvhg"]
+size = Vector2(16, 16)
+
+[node name="Drill" type="Node2D"]
+script = ExtResource("1_3jheq")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+texture = SubResource("PlaceholderTexture2D_ggvhg")
+offset = Vector2(16, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

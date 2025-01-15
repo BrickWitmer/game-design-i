@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://bmv0qada7t2vn"]
 
-[ext_resource type="Script" path="res://Moving.gd" id="1_irxae"]
+[ext_resource type="Script" path="res://Final_Project/transportation_belt.gd" id="1_hpg5x"]
 [ext_resource type="Texture2D" uid="uid://dt2bllgl1a7ba" path="res://Assets/Sprites/texture.png" id="2_45yqi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_paqdl"]
@@ -119,28 +119,19 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jgec"]
 size = Vector2(16, 16)
 
-[node name="TransportationBelt" type="Node2D"]
-script = ExtResource("1_irxae")
+[node name="TransportationBelt" type="Area2D" groups=["Belt"]]
+script = ExtResource("1_hpg5x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.57079
 sprite_frames = SubResource("SpriteFrames_k6sk5")
 autoplay = "default"
 frame = 6
 frame_progress = 0.000426239
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6jgec")
 
-[node name="Orientation" type="Node2D" parent="Area2D"]
-position = Vector2(-1, 0)
-
-[node name="RayCast2D" type="RayCast2D" parent="Area2D"]
-target_position = Vector2(-1, 0)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(-0.195851, -0.738157)
-zoom = Vector2(4.91, 4.91)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

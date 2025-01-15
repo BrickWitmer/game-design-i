@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cadlqvi70177c"]
+
+[ext_resource type="PackedScene" uid="uid://bmv0qada7t2vn" path="res://Final_Project/transportation_belt.tscn" id="1_lbrn0"]
+[ext_resource type="PackedScene" uid="uid://brv4mq1aufkb6" path="res://Final_Project/conveyer.tscn" id="3_7gu7l"]
+[ext_resource type="PackedScene" uid="uid://btoiec1ej8ye7" path="res://Final_Project/Drills/drill.tscn" id="3_mb8m4"]
+[ext_resource type="PackedScene" uid="uid://sqadjs7e1kdo" path="res://Final_Project/Items/item_test.tscn" id="4_5o3um"]
+[ext_resource type="PackedScene" uid="uid://v4y73n83i7ow" path="res://Final_Project/fp_player.tscn" id="5_l1iw2"]
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TransportationBelt" parent="." instance=ExtResource("1_lbrn0")]
+position = Vector2(-8, 8)
+
+[node name="TransportationBelt2" parent="." instance=ExtResource("1_lbrn0")]
+position = Vector2(-24, 8)
+
+[node name="TransportationBelt3" parent="." instance=ExtResource("1_lbrn0")]
+position = Vector2(-40, 8)
+
+[node name="TransportationBelt4" parent="." instance=ExtResource("1_lbrn0")]
+position = Vector2(-56, 8)
+
+[node name="TransportationBelt5" parent="." instance=ExtResource("1_lbrn0")]
+position = Vector2(-72, 8)
+rotation = 1.57494
+
+[node name="Drill" parent="." instance=ExtResource("3_mb8m4")]
+position = Vector2(-8, 8)
+
+[node name="Conveyer" parent="." instance=ExtResource("3_7gu7l")]
+position = Vector2(-12, 50)
+
+[node name="item_test" parent="." instance=ExtResource("4_5o3um")]
+position = Vector2(-12, 50)
+
+[node name="fp_player" parent="." instance=ExtResource("5_l1iw2")]
+position = Vector2(37, 39)

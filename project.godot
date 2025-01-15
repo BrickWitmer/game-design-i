@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Ahhhh="*res://ahhhh.gd"
+Vars="*res://vars.gd"
+Vector="*res://vector.gd"
 
 [debug]
 
@@ -26,6 +28,7 @@ gdscript/warnings/integer_division=0
 [global_group]
 
 Items=""
+Conveyor=""
 
 [input]
 

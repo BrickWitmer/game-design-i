@@ -15,6 +15,18 @@ func _process(delta: float) -> void:
 	if founditem:
 		var conveyor_velocity = conveyor_dir * speed
 		founditem.linear_velocity = conveyor_velocity
+	if Input.is_action_just_pressed("Rotation") and mouse_shape_entered:
+		if conveyor_dir == Vector2.DOWN:
+			conveyor_dir = Vector2.LEFT
+		elif conveyor_dir == Vector2.LEFT:
+			conveyor_dir = Vector2.UP
+		elif conveyor_dir == Vector2.UP:
+			conveyor_dir = Vector2.RIGHT
+		else:
+			conveyor_dir = Vector2.DOWN
+		$AnimatedSprite2D.rotate(deg_to_rad(90))
+		if mouse_shape_exited:
+			pass
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
@@ -32,11 +44,7 @@ func _on_body_exited(body: Node2D) -> void:
 		foundbody = null
 		print("B")
 	if body is RigidBody2D and body == founditem:
-		founditem.linear_velocity += Vector2.ZERO
+		founditem.linear_velocity = Vector2.ZERO
 		founditem = null
 		print("B")
 	pass
-
-func _on_mouse_entered() -> void:
-	if Input.is_action_just_pressed("Rotation"):
-		self.rotate(deg_to_rad(90))

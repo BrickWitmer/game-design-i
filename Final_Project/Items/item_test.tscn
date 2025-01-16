@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://sqadjs7e1kdo"]
+[gd_scene load_steps=4 format=3 uid="uid://sqadjs7e1kdo"]
 
 [ext_resource type="Texture2D" uid="uid://bdafa2wnsiof8" path="res://icon.svg" id="1_3ojit"]
+[ext_resource type="Script" path="res://Final_Project/Items/item_test.gd" id="1_8yxby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ieht4"]
 size = Vector2(8, 8)
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Items"]]
 gravity_scale = 0.0
+linear_damp = 10.0
+script = ExtResource("1_8yxby")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.062, 0.054)
